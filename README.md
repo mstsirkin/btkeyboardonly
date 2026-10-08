@@ -1,6 +1,8 @@
 # btkeyboardonly
 
-Automatically approve classic Bluetooth HID connections from selected paired devices and reject **all other service authorization requests** from those devices. Intended for using an Android phone as a Bluetooth keyboard without accepting its calls or media audio. Pairing and bonding remain intact.
+Using a phone as a Bluetooth keyboard should let the keyboard reconnect without asking for approval every time, while calls and media audio stay on the phone. But BlueZ trusts an entire device, and Blueman's “Always accept” button enables that whole-device trust—even when the authorization prompt is for the keyboard service. Trusting the keyboard therefore also permits the phone's audio services, which can cause sound to be routed to the computer.
+
+`btkeyboardonly` provides selective service authorization: automatically approve classic Bluetooth HID connections from selected paired devices and reject **all other service authorization requests** from those devices. The phone stays paired, its keyboard can reconnect without an approval prompt, and incoming calls and media audio connections are rejected so sound can stay on the phone. Other devices keep their normal Blueman behavior.
 
 ## Commands
 
